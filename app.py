@@ -4,7 +4,8 @@ from model import *
 def main():
     with st.sidebar:
         openai_api_key = st.text_input("API Key", key="api_key", type="password")
-    key_check = if openai_api_key.startswith("sk-") then True else False
+    key_check=False
+    if openai_api_key.startswith("sk-"): key_check=True else: key_check=False
     #api_key = os.environ("OPENAI_API_KEY")
     st.write('Are your friends true BlackPink fans?')
     st.write("Upload your factsheet to generate a quiz and test if they are! :D")
