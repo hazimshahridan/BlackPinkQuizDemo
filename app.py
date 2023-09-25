@@ -4,6 +4,7 @@ from model import *
 def main():
     with st.sidebar:
         openai_api_key = st.text_input("API Key", key="api_key", type="password")
+    key_check = if openai_api_key.startswith("sk-") then True else False
     #api_key = os.environ("OPENAI_API_KEY")
     st.write('Are your friends true BlackPink fans?')
     st.write("Upload your factsheet to generate a quiz and test if they are! :D")
@@ -47,7 +48,7 @@ def main():
         if st.button("Show Answers"):
             st.session_state["Show Answers"] = not st.session_state["Show Answers"]
             show_ans()
-    else:
+    if not key_check:
         st.write("Please enter valid API key.")
 if __name__ == '__main__':
     main()
