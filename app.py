@@ -48,6 +48,6 @@ def main():
             st.session_state["Show Answers"] = not st.session_state["Show Answers"]
             show_ans()
     else:
-        st.write("Please enter valid API key.)
+        st.write("Please enter valid API key.")
 if __name__ == '__main__':
     main()
