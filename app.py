@@ -40,12 +40,14 @@ def main():
     if "Show Answers" not in st.session_state:
             st.session_state["Show Answers"] = False
             
-    if openai_api_key and st.button("Generate Quiz!"):
+    if openai_api_key.startswith("sk-") and st.button("Generate Quiz!"):
         st.session_state["Generate Quiz!"] = not st.session_state["Generate Quiz!"]
         upload()
-    if openai_api_key and st.session_state["Generate Quiz!"]:
+    if st.session_state["Generate Quiz!"]:
         if st.button("Show Answers"):
             st.session_state["Show Answers"] = not st.session_state["Show Answers"]
             show_ans()
+    else:
+        st.write("Please enter valid API key.)
 if __name__ == '__main__':
     main()
