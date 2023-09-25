@@ -1,6 +1,7 @@
 pandas==2.1.1
 langchain==0.0.297
 spacy==3.6.1
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.6.0/en_core_web_sm-3.6.0-py3-none-any.whl
 openai==0.28.0
 tiktoken==0.5.1
 faiss-cpu==1.7.4
